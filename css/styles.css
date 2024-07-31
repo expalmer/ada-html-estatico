@@ -1,7 +1,7 @@
 :root {
   --green: rgb(166, 247, 80);
   --gray: rgb(225, 225, 225);
-  --grayDark: #38424d;
+  --grayDark: #5a6979;
   --blue: #4f6ca0;
 }
 
@@ -58,6 +58,7 @@ a:hover {
   margin-top: -1px;
   padding: 8px 16px;
   text-align: center;
+  font-size: 18px;
 }
 
 .nav a:first-child {
@@ -102,4 +103,9 @@ ul li {
 ul li small {
   color: var(--grayDark);
   display: block;
+}
+
+ul li,
+ul li a {
+  font-size: 18px;
 }
