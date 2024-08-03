@@ -109,3 +109,36 @@ ul li,
 ul li a {
   font-size: 18px;
 }
+
+p {
+  margin: 0;
+}
+
+.hero {
+  border: dotted 2px #b8af2d;
+  background-color: #0f1216;
+  color: rgb(168 154 57);
+  padding: 16px 16px;
+  margin: 20px 0;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+}
+
+.badge {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 13px;
+  color: var(--green);
+  padding: 3px 12px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  background-color: #2f3b4a;
+  border-radius: 4px;
+}
+
+.back {
+  text-align: center;
+}

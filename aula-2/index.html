@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../prism/prism.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="../prism//prism.js"></script>
+    <title>CSS</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="green">Introdução ao CSS</h1>
+    </header>
+    <nav class="back">
+      <a href="/index.html">Voltar</a>
+    </nav>
+    <main class="main">
+      <section class="section">
+        <h2>1. O que é CSS?</h2>
+        <p>
+          CSS (Cascading Style Sheets) é uma linguagem de estilo utilizada para
+          definir a apresentação de documentos HTML.
+        </p>
+        <h3>Como funciona o CSS?</h3>
+        <p>Seleciona elementos HTML e aplica estilos a eles.</p>
+        <h3>Sintaxe básica do CSS</h3>
+        <pre><code class="language-css">selector { 
+    property: value; 
+  }</code></pre>
+      </section>
+      <section class="section">
+        <h2>2. Prioridades no CSS</h2>
+        <p>
+          No CSS, a prioridade determina quais estilos serão aplicados a um
+          elemento quando há múltiplas regras que poderiam se aplicar. A
+          prioridade é influenciada por três fatores principais: 
+        <ol>
+          <li>Especificidade</li>
+          <li>Importância</li>
+          <li>Ordem de declaração</li>
+        </ol>
+        </p>
+        <h3 class="green">1. Especificidade</h3>
+        <p>A especificidade é calculada com base no tipo de seletor utilizado:</p>
+        <ul>
+          <li>
+            <strong>Seletores de elemento (tag):</strong> têm menor
+            especificidade.
+          </li>
+          <li><strong>Seletores de classe:</strong> têm especificidade média.</li>
+          <li><strong>Seletores de ID:</strong> têm maior especificidade.</li>
+          <li>
+            <strong>Estilo inline:</strong> aplicado diretamente no elemento HTML,
+            tem a maior especificidade.
+          </li>
+        </ul>
+        <p><strong>Exemplo:</strong></p>
+        <pre><code class="language-css">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    /* Seletores de elemento */
+    p {
+      color: blue; /* Especificidade baixa */
+    }
+
+    /* Seletores de classe */
+    .important-text {
+      color: green; /* Especificidade média */
+    }
+
+    /* Seletores de ID */
+    #unique-text {
+      color: red; /* Especificidade alta */
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p id="unique-text" class="important-text"&gt;Texto de exemplo&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <p>
+          <strong>Resultado:</strong> O texto será vermelho porque o seletor de ID
+          tem maior especificidade.
+        </p>
+        <h3 class="green">2. Importância</h3>
+        <p>
+          A propriedade <code>!important</code> pode ser usada para forçar um
+          estilo a ter prioridade máxima, independentemente da especificidade dos
+          seletores.
+        </p>
+        <p><strong>Exemplo:</strong></p>
+        <pre class="language-css"><code>p {
+  color: blue !important;
+}
+
+#unique-text {
+  color: red;
+}</code></pre>
+        <p>
+          <strong>Resultado:</strong> O texto será azul porque
+          <code>!important</code> tem prioridade máxima.
+        </p>
+        <h3 class="green">3. Ordem de Declaração</h3>
+        <p>
+          Se as regras tiverem a mesma especificidade e não houver
+          <code>!important</code>, a última regra declarada no CSS terá
+          prioridade.
+        </p>
+        <p><strong>Exemplo:</strong></p>
+        <pre><code class="language-css">p {
+  color: blue;
+}
+
+p {
+  color: green;
+}</code></pre>
+        <p>
+          <strong>Resultado:</strong> O texto será verde porque a última
+          declaração de <code>p</code> tem prioridade.
+        </p>
+        <h3>Hierarquia de Prioridade (Resumo)</h3>
+        <ol>
+          <li>Estilos inline (especificidade máxima).</li>
+          <li>Regras com <code>!important</code>.</li>
+          <li>Seletores de ID.</li>
+          <li>Seletores de classe.</li>
+          <li>Seletores de atributo, pseudo-classes e pseudo-elementos.</li>
+          <li>Seletores de elemento (tag).</li>
+          <li>Ordem de declaração (última regra aplicada).</li>
+        </ol>
+        <h4>Exemplo Completo</h4>
+        <p>Vamos ver um exemplo que reúne todos esses conceitos:</p>
+        <pre><code class="language-css">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    p {
+      color: blue; /* Especificidade baixa */
+    }
+
+    .important-text {
+      color: green; /* Especificidade média */
+    }
+
+    #unique-text {
+      color: red; /* Especificidade alta */
+    }
+
+    p {
+      color: purple; /* Ordem de declaração */
+    }
+
+    .important-text {
+      color: yellow !important; /* Importância */
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p id="unique-text" class="important-text" style="color: orange;"&gt;
+    Texto de exemplo
+  &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <p>
+          <strong>Resultado:</strong> A cor final do texto será
+          <strong>amarela</strong>, porque a classe
+          <code>.important-text</code> utiliza <code>!important</code>, que tem
+          prioridade máxima, superando todos os outros estilos, incluindo o estilo
+          inline.
+        </p>
+      </section>
+      <section class="section">
+        <h2>3. Criando um botão com classes</h2>
+        <pre><code class="language-css">.button {
+  padding: 8px 32px;
+  font-size: 18px;
+  border-radius: 6px;
+  border: solid 1px #000000;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.5;
+}
+
+.button:focus {
+  outline: 3px solid green;
+}
+
+.button--default {
+  background-color: #ddd;
+  color: #333;
+  border: solid 1px #000000;
+}
+
+.button--success {
+  background-color: #e8ffdb;
+  color: #1f9108;
+  border: solid 1px #075a11;
+}
+
+.button--error {
+  background-color: #ffcccc;
+  color: #9e1010;
+  border: solid 1px #5a0707;
+}
+
+.button--small {
+  padding: 6px 18px;
+  font-size: 12px;
+}</code></pre>
+        <p>
+          <button class="button button--default">Button default</button>
+        </p>
+        <p>
+          <button class="button button--success">Button success</button>
+        </p>
+        <p>
+          <button class="button button--error">Button error</button>
+        </p>
+        <p>
+          <button class="button button--small">Button small</button>
+          <button class="button button--success button--small">Button success & small</button>
+          <button class="button button--error button--small">button error & small</button>
+        </p>
+      </section>
+      <section class="section">
+        <h2>4. Exemplos de tipos de display</h2>
+        <h3 class="green">1. Display: block</h3>
+        <p>Elementos com <code class="language-css">display: block</code> ocupam a largura total do contêiner pai e começam em uma nova linha.</p>
+        <pre><code class="language-css">.block {
+      display: block;
+      width: 100%;
+      background: #add8e6;
+      padding: 10px;
+      margin: 5px 0;
+  }</code></pre>
+        <div>
+          <div class="block">Block Element 1</div>
+          <div class="block">Block Element 2</div>
+        </div>
+        <p>Exemplos de tags nativamente block:</p>
+        <ul>
+          <li>
+            <code>div</code>
+          </li>
+          <li>
+            <code>h1</code> a <code>h6</code>
+          </li>
+          <li>
+            <code>p</code>
+          </li>
+        </ul>
+        <h3 class="green">2. Display: inline</h3>
+        <p>Elementos com <code class="language-css">display: inline</code> ocupam apenas o espaço necessário e não começam em uma nova linha.</p>
+        <pre><code class="language-css">.inline {
+  display: inline;
+  background: #90ee90;
+  padding: 10px;
+  margin: 5px 0;
+  }</code></pre>
+        <div class="example">
+          <span class="inline">Inline Element 1</span>
+          <span class="inline">Inline Element 2</span>
+        </div>
+        <p>Exemplos de tags nativamente inline:</p>
+        <ul>
+          <li>
+            <code>span</code>
+          </li>
+          <li>
+            <code>a</code>
+          </li>
+          <li>
+            <code>img</code>
+          </li>
+        </ul>
+        <h3 class="green">3. Display: inline-block</h3>
+        <p>Elementos com <code class="language-css">display: inline-block</code> são como elementos <code>inline</code>, mas podem ter largura e altura definidas.</p>
+        <pre><code class="language-css">.inline-block {
+  display: inline-block;
+  background: #ffcccb;
+  padding: 10px;
+  margin: 5px 0;
+  }</code></pre>
+        <div class="example">
+          <div class="inline-block">Inline-block Element 1</div>
+          <div class="inline-block">Inline-block Element 2</div>
+        </div>
+        <p class="hero">
+          Nenhum elemento nativamente é <code>inline-block</code>, mas é possível alterar o comportamento de elementos <code>block</code> e <code>inline</code> para <code>inline-block</code>.
+        </p>
+      </section>
+      <section class="section">
+        <h2>5. Conceitos e exemplos de position no CSS</h2>
+        <p>
+          A propriedade position no CSS é usada para especificar o método de posicionamento de um elemento. Existem cinco valores principais para position: <strong class="badge">static, relative, absolute, fixed e sticky</strong>. Cada um desses valores define um comportamento diferente para o posicionamento dos elementos na página.
+        </p>
+        
+        <h3 class="green">1. Position: static</h3>
+        <p>Este é o valor padrão. Elementos com <code  class="language-css">position: static</code> são posicionados de acordo com o fluxo normal do documento, sem nenhuma modificação adicional.</p>
+        <pre><code  class="language-css">.static {
+    background: #add8e6;
+    padding: 10px;
+    margin: 5px;
+}</code></pre>
+        <div class="example">
+          <div class="static">Static Element</div>
+        </div>
+        <h3 class="green">2. Position: relative</h3>
+        <p>Elementos com <code class="language-css">position: relative</code> são posicionados de acordo com o fluxo normal do documento, mas podem ser deslocados do seu lugar original usando as propriedades <code>top</code>, <code>right</code>, <code>bottom</code> e <code>left</code>.</p>
+        <pre><code class="language-css">.relative {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    background: #90ee90;
+    padding: 10px;
+    margin: 5px;
+}</code></pre>
+        <div class="example">
+          <div class="relative">Relative Element</div>
+        </div>
+        <h3 class="green">3. Position: absolute</h3>
+        <p>Elementos com <code class="language-css">position: absolute</code> são removidos do fluxo normal do documento e são posicionados em relação ao seu contêiner pai mais próximo que tenha uma posição diferente de <code>static</code>. Se não houver tal contêiner pai, o elemento será posicionado em relação ao <code>&lt;html&gt;</code>.</p>
+        <pre><code class="language-css">.container-relative {
+    position: relative;
+    background: #f0f0f0;
+    padding: 20px;
+}
+
+.absolute {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #ffcccb;
+    padding: 10px;
+}</code></pre>
+        <div class="example">
+          <div class="container-relative">
+            <div class="absolute">Absolute Element</div>
+            Contêiner Pai
+          </div>
+        </div>
+        <h3 class="green">4. Position: fixed</h3>
+        <p>Elementos com <code class="language-css">position: fixed</code> são removidos do fluxo normal do documento e são posicionados em relação à viewport (a janela de visualização do navegador). Eles permanecem fixos em relação à viewport, mesmo quando a página é rolada.</p>
+        <pre><code class="language-css">.fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: #add8e6;
+    padding: 10px;
+}</code></pre>
+        <div class="example">
+          <div class="fixed">Fixed Element</div>
+        </div>
+        <p>Role a página para ver o efeito.</p>
+        <p style="margin-top: 2000px;">Fim da página</p>
+        <h3 class="green">5. Position: sticky</h3>
+        <p>Elementos com <code class="language-css">position: sticky</code> são posicionados de acordo com o fluxo normal do documento até que um determinado ponto de rolagem seja atingido. Nesse ponto, eles "grudam" na posição especificada (top, right, bottom, left) e permanecem fixos até que seu contêiner pai esteja fora de visão.</p>
+        <pre><code class="language-css">.sticky {
+    position: sticky;
+    top: 0;
+    background: #90ee90;
+    padding: 10px;
+    margin: 5px;
+}</code></pre>
+        <div class="sticky-container">
+          <div class="sticky">Sticky Element</div>
+          <p>Role a página para ver o efeito.</p>
+        </div>
+        <p>Fim da página</p>
+      </section>
+    </main>
+  </body>
+</html>

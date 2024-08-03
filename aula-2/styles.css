@@ -1,0 +1,109 @@
+.button {
+  padding: 8px 32px;
+  font-size: 18px;
+  border-radius: 6px;
+  border: solid 1px #000000;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.5;
+}
+
+.button:focus {
+  outline: 3px solid green;
+}
+
+.button--default {
+  background-color: #ddd;
+  color: #333;
+  border: solid 1px #000000;
+}
+
+.button--success {
+  background-color: #e8ffdb;
+  color: #1f9108;
+  border: solid 1px #075a11;
+}
+
+.button--error {
+  background-color: #ffcccc;
+  color: #9e1010;
+  border: solid 1px #5a0707;
+}
+
+.button--small {
+  padding: 6px 18px;
+  font-size: 12px;
+}
+
+.block {
+  display: block;
+  width: 100%;
+  background: #4f656c;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+.inline {
+  display: inline;
+  background: #4e854e;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+.inline-block {
+  display: inline-block;
+  background: #816867;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+.static {
+  background: #658893;
+  padding: 10px;
+  margin: 5px;
+}
+.relative {
+  position: relative;
+  top: 20px;
+  left: 20px;
+  background: #4e854e;
+  padding: 10px;
+  margin: 5px;
+}
+
+.container-relative {
+  position: relative;
+  background: #b78484;
+  padding: 20px;
+}
+
+.absolute {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #9f4745;
+  padding: 10px;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #6a909d;
+  padding: 10px;
+}
+
+.sticky {
+  position: sticky;
+  top: 20px;
+  left: 0;
+  background: #4e854e;
+  padding: 10px;
+  margin: 5px;
+}
+
+.sticky-container {
+  height: 2000px; /* Altura grande para permitir rolagem */
+}
