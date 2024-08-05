@@ -1,0 +1,78 @@
+.container {
+  display: flex;
+  border: 1px solid #000;
+  background-color: #fff;
+  padding: 8px;
+}
+
+.box {
+  padding: 0 16px 16px;
+  border-bottom: 1px solid #222830;
+}
+
+.item {
+  width: 32px;
+  height: 32px;
+}
+.item1 {
+  background-color: #ff5733;
+} /* Laranja */
+.item2 {
+  background-color: #33ff57;
+} /* Verde */
+.item3 {
+  background-color: #3357ff;
+} /* Azul */
+
+.flex {
+  display: flex;
+}
+
+.left,
+.right {
+  flex: 1;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.gridItem {
+  background-color: #8cacea;
+  border: 2px solid #4a6fa5;
+  padding: 20px;
+  text-align: center;
+}
+
+.site__container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto;
+  gap: 10px;
+}
+.site__header {
+  grid-column: 1 / 4;
+  background-color: #4a6fa5;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.site__sidebar {
+  background-color: #8cacea;
+  padding: 20px;
+}
+
+.site__content {
+  background-color: #b0d4e3;
+  padding: 20px;
+}
+
+.site__footer {
+  grid-column: 1 / 4;
+  background-color: #4a6fa5;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}

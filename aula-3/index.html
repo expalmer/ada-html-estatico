@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aula 3 - Flex e Grid</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../prism/prism.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="../prism/prism.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Flexbox e Grid</h1>
+    </header>
+    <main class="main">
+      <section class="section">
+        <h2>justify-content</h2>
+
+        <div class="box">
+          <span class="badge">justify-content: flex-end</span>
+          <pre><code class="language-css">.container {
+  display: flex;
+  justify-content: flex-end;
+}</code></pre>
+          <div class="flex">
+            <div class="left">
+              <div class="container">
+                <div class="item item1"></div>
+              </div>
+            </div>
+            <div class="right">
+              <div
+                class="container"
+                style="display: flex; justify-content: flex-end"
+              >
+                <div class="item item1"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <span class="badge">justify-content: center</span>
+          <pre><code class="language-css">.container {
+  display: flex;
+  justify-content: center;
+}</code></pre>
+          <div class="flex">
+            <div class="left">
+              <div class="container">
+                <div class="item item1"></div>
+                <div class="item item2"></div>
+              </div>
+            </div>
+            <div class="right">
+              <div
+                class="container"
+                style="display: flex; justify-content: center"
+              >
+                <div class="item item1"></div>
+                <div class="item item2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <span class="badge">justify-content: space-around</span>
+          <pre><code class="language-css">.container {
+  display: flex;
+  justify-content: space-around;
+}</code></pre>
+          <div class="flex">
+            <div class="left">
+              <div class="container">
+                <div class="item item1"></div>
+                <div class="item item2"></div>
+              </div>
+            </div>
+            <div class="right">
+              <div
+                class="container"
+                style="display: flex; justify-content: space-around"
+              >
+                <div class="item item1"></div>
+                <div class="item item2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <span class="badge">justify-content: space-between</span>
+          <pre><code class="language-css">.container {
+  display: flex;
+  justify-content: space-between;
+}</code></pre>
+          <div class="flex">
+            <div class="left">
+              <div class="container">
+                <div class="item item1"></div>
+                <div class="item item2"></div>
+              </div>
+            </div>
+            <div class="right">
+              <div
+                class="container"
+                style="display: flex; justify-content: space-between"
+              >
+                <div class="item item1"></div>
+                <div class="item item2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>flex-direction</h2>
+
+        <div class="box">
+          <span class="badge">flex-direction: column</span>
+          <pre><code class="language-css">.container {
+  display: flex;
+  flex-direction: column;
+}</code></pre>
+          <div class="flex">
+            <div class="left">
+              <div class="container">
+                <div class="item item1"></div>
+                <div class="item item2"></div>
+                <div class="item item3"></div>
+              </div>
+            </div>
+            <div class="right">
+              <div
+                class="container"
+                style="display: flex; flex-direction: column"
+              >
+                <div class="item item1"></div>
+                <div class="item item2"></div>
+                <div class="item item3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <span class="badge">flex-direction: column-reverse</span>
+          <pre><code class="language-css">.container {
+  display: flex;
+  flex-direction: column-reverse;
+}</code></pre>
+          <div class="flex">
+            <div class="left">
+              <div class="container">
+                <div class="item item1"></div>
+                <div class="item item2"></div>
+                <div class="item item3"></div>
+              </div>
+            </div>
+            <div class="right">
+              <div
+                class="container"
+                style="display: flex; flex-direction: column-reverse"
+              >
+                <div class="item item1"></div>
+                <div class="item item2"></div>
+                <div class="item item3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>align-self</h2>
+
+        <div class="box">
+          <span class="badge">align-self: flex-end;</span>
+          <pre><code class="language-css">.item2 {
+  align-self: flex-end;
+}</code></pre>
+          <div class="flex">
+            <div class="left">
+              <div class="container" style="height: 100px">
+                <div class="item item1"></div>
+                <div class="item item2"></div>
+                <div class="item item3"></div>
+              </div>
+            </div>
+            <div class="right">
+              <div class="container" style="display: flex; height: 100px">
+                <div class="item item1"></div>
+                <div class="item item2" style="align-self: flex-end"></div>
+                <div class="item item3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <span class="badge">align-self: center;</span>
+          <pre><code class="language-css">.item2 {
+  align-self: center;
+}</code></pre>
+          <div class="flex">
+            <div class="left">
+              <div class="container" style="height: 100px">
+                <div class="item item1"></div>
+                <div class="item item2"></div>
+                <div class="item item3"></div>
+              </div>
+            </div>
+            <div class="right">
+              <div class="container" style="display: flex; height: 100px">
+                <div class="item item1"></div>
+                <div class="item item2" style="align-self: center"></div>
+                <div class="item item3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>order</h2>
+
+        <div class="box">
+          <span class="badge">order: -1;</span>
+          <pre><code class="language-css">.item2 {
+  order: -1;
+}</code></pre>
+          <div class="flex">
+            <div class="left">
+              <div class="container" style="height: 100px">
+                <div class="item item1"></div>
+                <div class="item item2"></div>
+                <div class="item item3"></div>
+              </div>
+            </div>
+            <div class="right">
+              <div class="container" style="height: 100px">
+                <div class="item item1"></div>
+                <div class="item item2" style="order: -1"></div>
+                <div class="item item3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>flex-wrap</h2>
+
+        <div class="box">
+          <span class="badge">flex-wrap: wrap</span>
+          <pre><code class="language-css">.container {
+  flex-wrap: wrap
+}</code></pre>
+          <div class="flex">
+            <div class="left">
+              <div class="container" style="height: 100px; width: 120px">
+                <div class="item item1"></div>
+                <div class="item item2"></div>
+                <div class="item item3"></div>
+                <div class="item item1"></div>
+                <div class="item item2"></div>
+                <div class="item item3"></div>
+              </div>
+            </div>
+            <div class="right">
+              <div
+                class="container"
+                style="height: 100px; width: 120px; flex-wrap: wrap"
+              >
+                <div class="item item1"></div>
+                <div class="item item2"></div>
+                <div class="item item3"></div>
+                <div class="item item1"></div>
+                <div class="item item2"></div>
+                <div class="item item3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <span class="badge"
+            >flex-wrap: wrap; align-content: space-between;</span
+          >
+          <pre><code class="language-css">.container {
+  flex-wrap: wrap;
+  align-content: space-between;
+}</code></pre>
+          <div class="flex">
+            <div class="left">
+              <div class="container" style="height: 100px; width: 120px">
+                <div class="item item1"></div>
+                <div class="item item2"></div>
+                <div class="item item3"></div>
+                <div class="item item1"></div>
+                <div class="item item2"></div>
+                <div class="item item3"></div>
+              </div>
+            </div>
+            <div class="right">
+              <div
+                class="container"
+                style="
+                  height: 100px;
+                  width: 120px;
+                  flex-wrap: wrap;
+                  align-content: space-between;
+                "
+              >
+                <div class="item item1"></div>
+                <div class="item item2"></div>
+                <div class="item item3"></div>
+                <div class="item item1"></div>
+                <div class="item item2"></div>
+                <div class="item item3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>GRID</h2>
+        <div>
+          <pre><code class="language-css">.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.gridItem {
+  background-color: #8cacea;
+  border: 2px solid #4a6fa5;
+  padding: 20px;
+  text-align: center;
+}</code></pre>
+          <div class="gridContainer">
+            <div class="gridItem item1">Item 1</div>
+            <div class="gridItem item1">Item 2</div>
+            <div class="gridItem item1">Item 3</div>
+            <div class="gridItem item1">Item 4</div>
+            <div class="gridItem item1">Item 5</div>
+            <div class="gridItem item1">Item 6</div>
+          </div>
+        </div>
+
+        <div>
+          <pre><code class="language-css">.site__container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto;
+  gap: 10px;
+}
+.site__header {
+  grid-column: 1 / 4;
+  background-color: #4a6fa5;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+.site__sidebar {
+  background-color: #8cacea;
+  padding: 20px;
+}
+.site__content {
+  background-color: #b0d4e3;
+  padding: 20px;
+}
+.site__footer {
+  grid-column: 1 / 4;
+  background-color: #4a6fa5;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}</code></pre>
+          <div class="site__container">
+            <div class="site__header">Cabeçalho</div>
+            <div class="site__sidebar">Barra Lateral 1</div>
+            <div class="site__content">Conteúdo Principal</div>
+            <div class="site__sidebar">Barra Lateral 2</div>
+            <div class="site__footer">Rodapé</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Recursos</h2>
+        <ul>
+          <li>
+            <a
+              href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox"
+              target="_blank"
+              >MDN Web Docs - Conceitos básicos de Flexbox</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://origamid.com/projetos/flexbox-guia-completo/"
+              target="_blank"
+              >Origamid - Flexbox: Guia Completo</a
+            >
+          </li>
+          <li>
+            <!-- https://www.origamid.com/projetos/css-grid-layout-guia-completo/ -->
+            <a
+              href="https://origamid.com/projetos/css-grid-layout-guia-completo/"
+              target="_blank"
+              >Origamid - CSS Grid Layout: Guia Completo</a
+            >
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
