@@ -1,0 +1,43 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  align-items: baseline;
+}
+
+.a {
+  display: flex;
+  align-items: flex-end;
+  color: #b4838b;
+  background-color: #fff0f2;
+  min-height: 100px;
+}
+
+.b {
+  display: flex;
+  align-items: flex-start;
+  color: #88b483;
+  min-height: 100px;
+  background-color: #f3fff0;
+}
+
+.c {
+  color: #8683b4;
+  background-color: #f2f0ff;
+}
+
+.d {
+  color: #c5761b;
+  background-color: #fbd798;
+  display: flex;
+  align-items: center;
+  height: 130px;
+}
