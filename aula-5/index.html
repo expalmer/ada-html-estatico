@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5 - Formulários</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../prism/prism.css" />
+    <script src="../prism/prism.js"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .form-control {
+        margin-bottom: 1rem;
+        border: 1px solid #5d5c5c;
+        padding: 16px;
+      }
+
+      .form-control label {
+        display: block;
+      }
+
+      .radios {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .radios div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row-reverse;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h1>5 - Formulários</h1>
+    </header>
+    <main class="main">
+      <section class="section">
+        <h2>Cadastro de Pet</h2>
+        <p>
+          Lembre-se que o atributo <span class="badge">name</span> é muito
+          importante para que os dados sejam enviados corretamente.
+        </p>
+        <p>
+          O atributo <span class="badge">id</span> é utilizado para identificar
+          o campo. Usado para associar o label ao input, para isso o valor do
+          atributo <span class="badge">for</span> do label deve ser igual ao
+          valor do atributo <span class="badge">id</span> do input.
+        </p>
+        <p>
+          O atributo <span class="badge">required</span> é utilizado para que o
+          campo seja de preenchimento obrigatório.
+        </p>
+        <p>
+          O atributo <span class="badge">type</span> é utilizado para definir o
+          tipo de dado que será inserido no campo. ex: <code>text</code>,
+          <code>email</code>, <code>number</code>, <code>checkbox</code>,
+          <code>radio</code>, <code>select</code>, <code>textarea</code>.
+        </p>
+        <p>
+          Lembre-se que o input do tipo <code>radio</code> deve ter o mesmo
+          valor no atributo <span class="badge">name</span> para que o usuário
+          possa escolher apenas uma opção.
+        </p>
+        <p>
+          Já o input do tipo <code>checkbox</code> pode ter o mesmo valor no
+          atributo <span class="badge">name</span> para que o usuário possa
+          escolher mais de uma opção. Porém é importante que o valor do atributo
+          <span class="badge">id</span> seja diferente para que o usuário
+          consiga selecionar a opção.
+        </p>
+        <form action="https://site.com.br/form" method="post">
+          <h3>Seus dados</h3>
+          <div class="form-control">
+            <label for="nome-do-dono">Seu nome</label>
+            <input type="text" id="nome-do-dono" nome="nome-do-dono" required />
+          </div>
+
+          <div class="form-control">
+            <label for="email-do-dono">Seu e-mail</label>
+            <input
+              type="email"
+              id="email-do-dono"
+              nome="email-do-dono"
+              required
+            />
+          </div>
+
+          <h3>Dados do seu pet</h3>
+          <div class="form-control">
+            <label for="nome">Nome</label>
+            <input type="number" id="nome" name="nome" required />
+          </div>
+
+          <div class="form-control">
+            <label for="idade">Idade</label>
+            <input type="number" id="idade" name="idade" required />
+          </div>
+
+          <div class="form-control">
+            <label for="tipo">Tipo</label>
+            <select name="tipo" id="tipo">
+              <option value="cachorro">Cachorro</option>
+              <option value="gato">Gato</option>
+              <option value="peixe">Peixe</option>
+              <option value="passaro">Pássaro</option>
+            </select>
+          </div>
+
+          <div class="form-control">
+            <label for="vacinado">Vacinado</label>
+            <input type="checkbox" id="vacinado" name="vacinado" value="sim" />
+          </div>
+
+          <div class="form-control">
+            <h4>Seu pet possui alguma dessas restrições ?</h4>
+            <!-- checkbox -->
+            <div class="radios">
+              <div>
+                <label for="alergia">Alergia</label>
+                <input
+                  type="checkbox"
+                  name="restricoes"
+                  value="alergia"
+                  id="alergia"
+                />
+              </div>
+              <div>
+                <label for="diabetes">Diabetes</label>
+                <input
+                  type="checkbox"
+                  name="restricoes"
+                  value="diabetes"
+                  id="diabetes"
+                />
+              </div>
+              <div>
+                <label for="obesidade">Obesidade</label>
+                <input
+                  type="checkbox"
+                  name="restricoes"
+                  value="obesidade"
+                  id="obesidade"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-control">
+            <!-- cor -->
+            <div class="radios">
+              <div>
+                <label for="vermelho">vermelho</label>
+                <input
+                  type="radio"
+                  name="cor"
+                  value="vermelho"
+                  id="vermelho"
+                  required
+                />
+              </div>
+              <div>
+                <label for="azul">azul</label>
+                <input
+                  type="radio"
+                  name="cor"
+                  value="azul"
+                  id="azul"
+                  required
+                />
+              </div>
+              <div>
+                <label for="amarelo">amarelo</label>
+                <input
+                  type="radio"
+                  name="cor"
+                  value="amarelo"
+                  id="amarelo"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-control">
+            <label for="observacoes">Observações</label>
+            <textarea
+              name="observacoes"
+              id="observacoes"
+              cols="30"
+              rows="10"
+            ></textarea>
+          </div>
+
+          <div class="form-control">
+            <button type="submit">Enviar</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
