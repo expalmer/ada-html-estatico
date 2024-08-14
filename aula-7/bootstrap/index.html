@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boostrap</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">...</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div>
+      <div class="alert alert-primary" role="alert">
+        A simple primary alert—check it out!
+      </div>
+    </div>
+    <div class="bd-example m-0 border-0 bd-example-row">
+      <div class="container text-center">
+        <div class="row" style="height: 500px">
+          <div class="col align-self-start">One of three columns</div>
+          <div class="col align-self-center">One of three columns</div>
+          <div class="col align-self-end">One of three columns</div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="bd-example m-0 border-0 bd-example-row">
+      <div class="container text-center">
+        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+        <div class="row">
+          <div class="col-md-8">.col-md-8</div>
+          <div class="col-10 col-md-4">.col-6 .col-md-4</div>
+        </div>
+
+        <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+        <div class="row">
+          <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+          <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+          <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+        </div>
+
+        <!-- Columns are always 50% wide, on mobile and desktop -->
+        <div class="row">
+          <div class="col-6">.col-6</div>
+          <div class="col-6">.col-6</div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="bd-example m-0 border-0 bd-example-row">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-md-8 col-lg-4">col-sm-8</div>
+          <div class="col-md-4 col-lg-8">col-sm-4</div>
+        </div>
+        <div class="row">
+          <div class="col-sm">col-sm</div>
+          <div class="col-sm">col-sm</div>
+          <div class="col-sm">col-sm</div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="bd-example m-0 border-0 bd-example-row">
+      <div class="container text-center">
+        <div class="row justify-content-md-center">
+          <div class="col col-lg-2">1 of 3</div>
+          <div class="col-md-auto">Variable width content</div>
+          <div class="col col-lg-2">3 of 3</div>
+        </div>
+        <div class="row">
+          <div class="col">1 of 3</div>
+          <div class="col-md-auto">Variable width content</div>
+          <div class="col col-lg-2">3 of 3</div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="bd-example m-0 border-0 bd-example-row">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">1 of 3</div>
+          <div class="col-6">2 of 3 (wider)</div>
+          <div class="col">3 of 3</div>
+        </div>
+        <div class="row">
+          <div class="col">1 of 3</div>
+          <div class="col-5">2 of 3 (wider)</div>
+          <div class="col">3 of 3</div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="bd-example m-0 border-0 bd-example-row">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">1 of 2</div>
+          <div class="col">2 of 2</div>
+        </div>
+        <div class="row">
+          <div class="col">1 of 3</div>
+          <div class="col">2 of 3</div>
+          <div class="col">3 of 3</div>
+        </div>
+      </div>
+    </div>
+    <div class="bd-example m-0 border-0 bd-example-row">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">Column</div>
+          <div class="col">Column</div>
+          <div class="col">Column</div>
+        </div>
+      </div>
+    </div>
+    <div class="text-bg-primary container-sm">
+      100% wide until small breakpoint
+    </div>
+    <div class="text-bg-primary container-md">
+      100% wide until medium breakpoint
+    </div>
+    <div class="text-bg-primary container-lg">
+      100% wide until large breakpoint
+    </div>
+    <div class="text-bg-primary container-xl">
+      100% wide until extra large breakpoint
+    </div>
+    <div class="text-bg-primary container-xxl">
+      100% wide until extra extra large breakpoint
+    </div>
+
+    <header>
+      <h1>Página em bootstrap</h1>
+      <h2>h2. Bootstrap heading</h2>
+      <h3>h3. Bootstrap heading</h3>
+      <h4>h4. Bootstrap heading</h4>
+      <h5>h5. Bootstrap heading</h5>
+      <h6>h6. Bootstrap heading</h6>
+      <p>This is an example paragraph.</p>
+      <a href="#">This is an example link</a>
+      <a href="#">This is an example link</a>
+      <hr />
+      <ul>
+        <li>Tiger</li>
+        <li>Lion</li>
+        <li>Elephant</li>
+      </ul>
+    </header>
+    <section>
+      For example, <code>&lt;section&gt;</code> should be wrapped as inline.
+      <p><var>y</var> = <var>m</var><var>x</var> + <var>b</var></p>
+    </section>
+    <section>
+      To switch directories, type <kbd>cd</kbd> followed by the name of the
+      directory.<br />
+      To edit settings, press <kbd><kbd>Ctrl</kbd> + <kbd>,</kbd></kbd>
+    </section>
+    <section>
+      <p class="text-danger">
+        <span class="visually-hidden">Danger: </span>
+        This action is not reversible
+      </p>
+    </section>
+    <section>
+      <table>
+        <caption>
+          This is an example table, and this is its caption to describe the
+          contents.
+        </caption>
+        <thead>
+          <tr>
+            <th>Table heading</th>
+            <th>Table heading</th>
+            <th>Table heading</th>
+            <th>Table heading</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+          </tr>
+          <tr>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+          </tr>
+          <tr>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

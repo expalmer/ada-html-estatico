@@ -1,0 +1,8 @@
+.bd-example-row [class^="col"],
+.bd-example-cols [class^="col"] > *,
+.bd-example-cssgrid [class*="grid"] > * {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  background-color: #712cf926;
+  border: 1px solid #712cf926;
+}
